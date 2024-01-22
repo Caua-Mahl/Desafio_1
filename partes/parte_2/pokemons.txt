@@ -1,0 +1,23 @@
+array (
+  'count' => 1302,
+  'next' => 'https://pokeapi.co/api/v2/pokemon/?offset=3&limit=3',
+  'previous' => NULL,
+  'results' => 
+  array (
+    0 => 
+    array (
+      'name' => 'bulbasaur',
+      'url' => 'https://pokeapi.co/api/v2/pokemon/1/',
+    ),
+    1 => 
+    array (
+      'name' => 'ivysaur',
+      'url' => 'https://pokeapi.co/api/v2/pokemon/2/',
+    ),
+    2 => 
+    array (
+      'name' => 'venusaur',
+      'url' => 'https://pokeapi.co/api/v2/pokemon/3/',
+    ),
+  ),
+)
