@@ -23,9 +23,10 @@ $mostrar = 15; //quantos pokemons quero mostrar
 
 $total=($page-1)*15; // pegar a página e multiplicar pela quantidade que quero mostrar, -1 adicionado pq se não os primeiros pokemons estariam na página 0
 
-$pagina = array_slice($pokemons['results'],$total,$mostrar);
+$pagina = array_slice($pokemons['results'],$total,$mostrar); //filtrar os pokemons pela pagina escolhida
+$paginaNomes= array_column($pagina, 'name'); // pegar apenas a array com os nomes dos pokemons filtrados
 
-var_dump($pagina); // pra confirmar se devolve certinho em json
+var_dump($paginaNomes); // pra confirmar se devolve certinho em json os nomes 
 
 /* foreach($pagina as $pokemon) { // mostra mais organizado a resposta, tirar na versão final
     echo $pokemon['name'] . "<p>";
