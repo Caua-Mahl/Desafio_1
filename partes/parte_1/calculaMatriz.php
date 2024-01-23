@@ -1,4 +1,10 @@
 <?php
+/** 
+    *@param array $m1 — Matriz 1 que será multiplicada.
+    *@param array $m2 — Matriz 2 que será multiplicada..
+    *@return {Matriz Nova} Resultado da multiplicação da Matriz 1 com a Matriz 2.   
+*/
+
 function calculaMatriz(array $m1, array $m2)
 {
     $l1 = count($m1);    // linhas matriz 1

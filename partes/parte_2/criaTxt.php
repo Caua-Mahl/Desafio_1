@@ -1,11 +1,16 @@
 <?php 
-/* 
+/*  
+    *LÓGICA:
     se não tiver um arquivo txt:
         cria um txt novo para armazenar os dados da api e retorna ele
     caso já tenha:
         retorna ele.
-
 */
+/** 
+    *@param {url} link da API válido para seus dados serem transformados em txt.
+    *@return {nome do arquivo} nome do txt criado em string.   
+*/
+
 function criaTxt($url){
     if(!file_exists('pokemons.txt')){
         $ch = curl_init($url);
