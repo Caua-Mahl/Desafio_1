@@ -8,12 +8,9 @@ $pokeTxt = criaTxt($url); // chama a função e armazena o nome do txt
 //Transformando o txt em um objeto novamente;
 $pokemons = eval('return ' . file_get_contents($pokeTxt) . ';'); //forma q e achei para usar o arquivo txt com ajuda do eval
 
-echo "<pre>";
-//var_dump($pokemons['results']);
-
-// paginação:
-//verificando se foi passada a página na url e se ela é de 1 a 10, se n for vira 1
-if(isset($_GET['page'])){
+// PAGINAÇÃO:
+// verificando se foi passada a página na url e se ela é de 1 a 10, se n for vira 1
+if(isset($_GET['page'])){ 
     if(1 <= intval($_GET['page']) && intval($_GET['page']) <= 10){
         $page = intval($_GET['page']);
     } else {
@@ -23,9 +20,14 @@ if(isset($_GET['page'])){
     $page = 1;
 };
 $mostrar = 15; //quantos pokemons quero mostrar
+
 $total=($page-1)*15; // pegar a página e multiplicar pela quantidade que quero mostrar, -1 adicionado pq se não os primeiros pokemons estariam na página 0
+
 $pagina = array_slice($pokemons['results'],$total,$mostrar);
-foreach($pagina as $pokemon) {
-    echo $pokemon['name'] . "\n";
-}
+
+var_dump($pagina); // pra confirmar se devolve certinho em json
+
+/* foreach($pagina as $pokemon) { // mostra mais organizado a resposta, tirar na versão final
+    echo $pokemon['name'] . "<p>";
+} */
 ?>
