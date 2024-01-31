@@ -33,3 +33,4 @@ function calculaMatriz(array $m1, array $m2)
         echo "\n";
     };
 }
+?>

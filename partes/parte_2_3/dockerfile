@@ -1,0 +1,15 @@
+# Imagem oficial do PHP como base
+FROM php:7.4-apache
+
+# DiretÃ³rio de trabalho dentro do contÃªiner
+WORKDIR /var/www/html
+
+# Copie os arquivos para o diretÃ³rio /var/www/html no contÃªiner
+COPY . /var/www/html
+
+# InstalaÃ§Ã£o do cURL 
+RUN apt-get update && apt-get install -y libcurl4-openssl-dev
+RUN docker-php-ext-install curl
+
+# Exponha a porta 80 para o Apache
+EXPOSE 80
